@@ -37,6 +37,14 @@
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
+        
+        <!-- Repositories untuk plugins -->
+    <pluginRepositories>
+        <pluginRepository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
 
     <dependencyManagement>
         <dependencies>
