@@ -21,7 +21,7 @@
     <properties>
         <java.version>11</java.version> <!-- Use Java 11 as requested -->
         <vaadin.version>24.6.5</vaadin.version> <!-- Latest Vaadin version -->
-        <spring-security.version>6.4</spring-security.version>
+        <spring-security.version>5.8.8</spring-security.version> <!-- Updated to available version -->
         <spring-data.version>2024.1.2</spring-data.version>
         <jackson.version>2.18</jackson.version>
         <log4j.version>2.24</log4j.version>
@@ -123,7 +123,7 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-bom</artifactId>
-            <version>6.4.0</version>
+            <version>${spring-security.version}</version>
             <type>pom</type>
         </dependency>
     </dependencies>
