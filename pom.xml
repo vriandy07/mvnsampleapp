@@ -34,11 +34,12 @@
         </dependency>
 
         <!-- Line Awesome Icons -->
-        <dependency>
-            <groupId>com.vaadin.componentfactory</groupId>
-            <artifactId>line-awesome-flow</artifactId>
-            <version>1.5.0</version> <!-- Updated to a more stable version -->
-        </dependency>
+       <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>font-awesome</artifactId>
+            <version>6.5.1</version>  <!-- Ganti dengan versi terbaru -->
+       </dependency>
+
 
         <!-- Spring Boot Core -->
         <dependency>
