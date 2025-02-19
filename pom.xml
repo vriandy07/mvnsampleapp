@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.0</version> <!-- Updated to the latest Spring Boot version -->
+        <version>3.2.2</version> <!-- Updated to the latest GA version of Spring Boot -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -19,23 +19,14 @@
 
     <!-- Properties for centralized version management -->
     <properties>
-        <java.version>11</java.version> <!-- Use Java 11 as requested -->
-        <vaadin.version>24.6.5</vaadin.version> <!-- Latest Vaadin version -->
-        <spring-security.version>5.8.8</spring-security.version> <!-- Updated to available version -->
-        <spring-data.version>2024.1.2</spring-data.version>
-        <jackson.version>2.18</jackson.version>
-        <log4j.version>2.24</log4j.version>
-        <junit-jupiter.version>5.8.2</junit-jupiter.version> <!-- Updated version of JUnit -->
-        <mockito.version>5.15.2</mockito.version>
+        <java.version>17</java.version> <!-- Updated to Java 17, which is the latest LTS version -->
+        <vaadin.version>24.3.3</vaadin.version> <!-- Latest GA Vaadin version -->
+        <spring-security.version>6.2.1</spring-security.version> <!-- Latest GA Spring Security version -->
+        <jackson.version>2.15.3</jackson.version> <!-- Latest GA Jackson version -->
+        <log4j.version>2.22.1</log4j.version> <!-- Latest GA Log4j version -->
+        <junit-jupiter.version>5.10.1</junit-jupiter.version> <!-- Latest GA JUnit Jupiter version -->
+        <mockito.version>5.8.0</mockito.version> <!-- Latest GA Mockito version -->
     </properties>
-
-    <!-- Repositories to resolve missing dependencies -->
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>https://repo.maven.apache.org/maven2</url>
-        </repository>
-    </repositories>
 
     <!-- Dependency Management for consistent versioning across modules -->
     <dependencyManagement>
@@ -75,7 +66,7 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>9.2.0</version> <!-- Updated MySQL Connector version -->
+            <version>8.2.0</version> <!-- Latest GA MySQL Connector version -->
         </dependency>
 
         <!-- Utilities -->
@@ -108,23 +99,14 @@
             <version>${mockito.version}</version>
             <scope>test</scope>
         </dependency>
-        
-        <!-- Added Dependencies -->
-        <!-- https://mvnrepository.com/artifact/org.junit/junit-bom -->
-        <dependency>
-            <groupId>org.junit</groupId>
-            <artifactId>junit-bom</artifactId>
-            <version>5.11.0</version>
-            <type>pom</type>
-            <scope>test</scope>
-        </dependency>
-        
-        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-bom -->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-bom</artifactId>
-            <version>${spring-security.version}</version>
-            <type>pom</type>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
