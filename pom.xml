@@ -7,38 +7,40 @@
     <artifactId>my-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>
+        <relativePath/>
+    </parent>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <dependencies>
-        <!-- Vaadin Core -->
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
             <version>23.0.0</version>
         </dependency>
 
-        <!-- Vaadin Spring Integration -->
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
             <version>23.0.0</version>
         </dependency>
 
-        <!-- Line Awesome (Pindahkan ke repositori alternatif jika tidak tersedia di Maven Central) -->
         <dependency>
             <groupId>com.vaadin.componentfactory</groupId>
             <artifactId>line-awesome-flow</artifactId>
             <version>1.3.0</version>
         </dependency>
 
-        <!-- Spring Boot Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>2.7.18</version>
         </dependency>
     </dependencies>
 
@@ -46,13 +48,6 @@
         <repository>
             <id>vaadin-addons</id>
             <url>https://maven.vaadin.com/vaadin-addons</url>
-        </repository>
-        <repository>
-            <id>vaadin-componentfactory</id>
-            <url>https://maven.vaadin.com/vaadin-prereleases</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
         </repository>
     </repositories>
 
@@ -62,6 +57,27 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>enforce-java</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireJavaVersion>
+                                    <version>17</version>
+                                </requireJavaVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
