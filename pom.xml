@@ -1,118 +1,52 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <!-- Parent POM -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version> <!-- Updated to the latest GA version of Spring Boot -->
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
 
     <groupId>com.example</groupId>
     <artifactId>my-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>my-project</name>
-    <description>Example Spring Boot project with Vaadin</description>
 
-    <!-- Properties for centralized version management -->
     <properties>
-        <java.version>17</java.version> <!-- Updated to Java 17, which is the latest LTS version -->
-        <vaadin.version>24.3.3</vaadin.version> <!-- Latest GA Vaadin version -->
-        <spring-security.version>6.2.1</spring-security.version> <!-- Latest GA Spring Security version -->
-        <jackson.version>2.15.3</jackson.version> <!-- Latest GA Jackson version -->
-        <log4j.version>2.22.1</log4j.version> <!-- Latest GA Log4j version -->
-        <junit-jupiter.version>5.10.1</junit-jupiter.version> <!-- Latest GA JUnit Jupiter version -->
-        <mockito.version>5.8.0</mockito.version> <!-- Latest GA Mockito version -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
-    <!-- Dependency Management for consistent versioning across modules -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>com.vaadin</groupId>
-                <artifactId>vaadin-bom</artifactId>
-                <version>${vaadin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
-        <!-- Spring Boot Starters -->
+        <!-- Vaadin Core -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-core</artifactId>
+            <version>23.0.0</version>
         </dependency>
 
-        <!-- Vaadin -->
+        <!-- Vaadin Spring Integration -->
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
+            <version>23.0.0</version>
         </dependency>
 
-        <!-- Database -->
+        <!-- Line Awesome -->
         <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>8.2.0</version> <!-- Latest GA MySQL Connector version -->
+            <groupId>com.vaadin.componentfactory</groupId>
+            <artifactId>line-awesome-flow</artifactId>
+            <version>1.3.0</version>
         </dependency>
 
-        <!-- Utilities -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
-
-        <!-- Test dependencies -->
+        <!-- Spring Boot Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>${mockito.version}</version>
-            <scope>test</scope>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
-
-    <repositories>
-        <repository>
-            <id>spring-releases</id>
-            <url>https://repo.spring.io/release</url>
-        </repository>
-    </repositories>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
             </plugin>
         </plugins>
     </build>
