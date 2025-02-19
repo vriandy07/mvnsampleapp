@@ -27,7 +27,7 @@
             <version>23.0.0</version>
         </dependency>
 
-        <!-- Line Awesome -->
+        <!-- Line Awesome (Pindahkan ke repositori alternatif jika tidak tersedia di Maven Central) -->
         <dependency>
             <groupId>com.vaadin.componentfactory</groupId>
             <artifactId>line-awesome-flow</artifactId>
@@ -41,6 +41,13 @@
             <version>2.7.18</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>vaadin-addons</id>
+            <url>https://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
